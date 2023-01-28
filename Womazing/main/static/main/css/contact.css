@@ -9,6 +9,13 @@
     font-family: Raleway-Medium;
     margin-top: 59px ;
 }
+#id_username:active{
+    background: inherit;
+
+}
+input{
+    background: inherit;
+}
 .MainContainerNav {
     display: flex;
     font-family: Raleway-Medium;

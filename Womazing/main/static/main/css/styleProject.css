@@ -4,6 +4,33 @@
     box-sizing: border-box;
     user-select: none;
 }
+@keyframes oneAnimate {
+    from{
+        transform: translateX(-200px) rotate(-8deg) scale(.5);
+    }
+    to{
+        transform: translateX(0px) rotate(0deg) scale(1); 
+    }
+    
+}
+@keyframes collection{
+    from{
+        transform: translateY(400px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
+@keyframes twoAnimate {
+    from{
+        transform: translateX(200px) rotate(8deg) scale(.5);
+        
+    }
+    to{
+        transform: translateX(0px)  rotate(0deg) scale(1); 
+    }
+    
+}
 @keyframes basket_animate {
     from{
         transform: scale(.8);
@@ -178,8 +205,12 @@ input[name = coupon]{
     font-weight: 400;
     font-size: 20px;
     font-family:Raleway-Regular ;
+ 
    
 
+}
+.header-slader-item-text:first-child{
+    animation: oneAnimate 2.5s 1; 
 }
 .header-slader-item-text h4{
     font-weight: 500;
@@ -251,7 +282,12 @@ input[name = coupon]{
     position: relative;
 }
 .header-slader-item-img{
-    position: relative;
+    position: relative; 
+    animation: twoAnimate 2.5s 1;
+    
+}
+.header-slader-item-img:first-child{
+   
 }
 .header-slader-item-img::after{
     content: "";
@@ -306,6 +342,18 @@ input[name = coupon]{
     max-height: 350px;
 
 }
+/* .element-animation{
+    transform: translateY(300px);
+    opacity: 0;
+    transition: transform 2s ease, opacity 2s ease-in;
+}
+.element-show{
+    transform: translateY(0px);
+    opacity: 1;
+} */
+.sladerCollectionConteiner-item{
+    animation: collection 2s 1;
+}
 .sladerCollectionConteiner-item>p{
     text-align: center;
     font-weight: 500;
@@ -315,6 +363,10 @@ input[name = coupon]{
     letter-spacing: 0.02em;
     margin-top: 20px;
 
+}
+
+input:-webkit-autofill:focus{
+    -webkit-box-shadow: 0 0 0 30px white inset ;
 }
 .sladerCollectionConteiner-item>p:last-child{
     margin: 0;
