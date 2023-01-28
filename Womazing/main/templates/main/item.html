@@ -1,0 +1,154 @@
+{% extends 'main/layout.html' %}
+{% load static %} 
+{% block title %} Товары{% endblock %}
+
+{% block content %}
+
+        <div class="contactContainerH5">
+            <h5 class="mainH5">Купальник Glow</h5>
+            <div class="MainContainerNav">
+                <p>
+                    Главная
+                
+                    </p>
+                <p class="teell">&#8212</p>
+                <p>Купальник</p>
+                <p class="teell">&#8212</p>
+                <p>Купальник Glow</p>
+            </div>
+        </div>
+    {% if user.is_authenticated %}
+        <form class="itemBlock" method="post">
+            {% csrf_token %}
+                <div class="itemImg">
+                    <img src="{{product.image.url}}" alt="">
+                </div>
+                <div class="itemData">
+                    <div class="itemPrice">
+                        <p>{{product.price}}</p>
+                        <input type="hidden" value="{{product.price}}" name="price">
+                        <input type="hidden" value="{{product.id}}" name="productId">
+                        <input type="hidden" value="{{ user.id }}" name="userId">
+                        <p></p>
+                        <span>$450</span>
+                    </div>
+                    <div class="itemSize">
+                        <p>Выберите размер</p>
+                       <div>
+
+                            {% for size in product.size.in_bulk %}
+                            <label class="itemSize-label" ><input type="radio" required  class="itemSize-input" name="sizeItem" value="
+                                
+                            {%if size == 1%}
+                                S
+                            {%endif%}
+                            {%if size == 2%}
+                                M
+                            {%endif%}
+                            {%if size == 3%}
+                                L
+                            {%endif%}
+                            {%if size == 4%}
+                                XL
+                            {%endif%}
+                            {%if size == 5%}
+                                XL2
+                            {%endif%}
+                                
+                                
+                                "><div class="itemSizeDiv">
+                                <!-- {{size}} -->
+                                {%if size == 1%}
+                                    S
+                                {%endif%}
+                                {%if size == 2%}
+                                    M
+                                {%endif%}
+                                {%if size == 3%}
+                                    L
+                                {%endif%}
+                                {%if size == 4%}
+                                    XL
+                                {%endif%}
+                                {%if size == 5%}
+                                    XL2
+                                {%endif%}
+
+                            </div></label>
+                            <!-- <label class="itemSize-label" ><input type="radio" class="itemSize-input" name="sizeItem" value="1"><div class="itemSizeDiv">S</div></label> 
+                            <label class="itemSize-label" ><input type="radio" class="itemSize-input" name="sizeItem" value="2"><div class="itemSizeDiv">M</div></label>
+                            <label class="itemSize-label" ><input type="radio" class="itemSize-input" name="sizeItem" value="3"><div class="itemSizeDiv">L</div></label>
+                            <label class="itemSize-label" ><input type="radio" class="itemSize-input" name="sizeItem" value="4"><div class="itemSizeDiv">XL</div></label> 
+                            <label class="itemSize-label" ><input type="radio" class="itemSize-input" name="sizeItem" value="5"><div class="itemSizeDiv">XL</div></label>  -->
+                            {%endfor%}
+                        </div>
+                    </div>
+                    <div class="itemColor">
+                       <p>Выберите цвет</p>
+                       <div>
+                        {% for color in product.color.in_bulk %}
+                            <label><input type="radio" name="itemColor"  required id="" class="itemColor-input" 
+                                value="
+                                {% if color == 1%}
+                                RosyBrown
+                                "><div class="itemColorDiv" style="background-color:#FDC796;">
+                                </div></label> 
+                                {%endif%}
+                                {% if color == 2%}
+                                Thistle
+                                "><div class="itemColorDiv" style="background-color:#927876 ;">
+                                </div></label> 
+                                {%endif%}
+                                {% if color == 3%}
+                                Salmon
+                                "><div class="itemColorDiv" style="background-color:#D4D4D4 ;">
+                                </div></label> 
+                                {%endif%}
+                                {% if color == 4%}
+                                BurlyWood
+                                "><div class="itemColorDiv" style="background-color:#FD9696 ;">
+                                </div></label> 
+                                {%endif%}
+                               
+                        {%endfor%}
+                         
+                       </div>
+                       
+                    </div>
+                    <div class="itemBtn">
+                        <input type="number" name="countProduct" id="" class="itemCount" value="1">
+                        <button class="btn-project">Добавить в корзину</button>
+                    </div>
+                </div>
+            
+            </form>
+        <div class="itemSimilar">
+            <h4 class="textH4project">Связанные товары</h4>
+            <div class="itemSimilarContainer">
+                
+                <div class="itemSimilar-item">
+                    <div>
+                        <img src="{{prev.image.url}} " alt="" srcset="">
+                    </div>
+                    
+                    <p>{{prev.name}}</p>
+                    <span>{{prev.price}}</span>
+                   
+                </div>
+                
+                <div class="itemSimilar-item">
+                    <div>
+                         <img src="{{next.image.url}}" alt="" srcset="">
+                    </div>
+         
+                    
+                    <p>{{next.name}}</p>
+                    <span>{{next.price}}</span>
+                </div>
+            </div>
+        </div>
+        {%else%}
+            <p class="emptyBasket emptyBasket_p">Авторизуйтесь, чтоб положить в корзину</p>
+            <a class="emptyBasket  emptyBasket_a" href="{% url 'login' %}?next={{request.path}}">Войти</a>
+        {%endif%}
+{% endblock %}

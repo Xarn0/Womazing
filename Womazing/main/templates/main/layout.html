@@ -1,0 +1,131 @@
+{% load static %}
+{%load main_tags%}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="{% static 'main/image/icon/logo.svg'%}" type="image/x-icon">
+     <link rel="stylesheet" href="{% static 'main/css/styleProject.css' %}">
+     <link rel="stylesheet" href="{% static 'main/css/adaptive.css' %}">
+     <link rel="stylesheet" href="{% static 'main/css/contact.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="blockOberts"></div>
+    <header class="header">
+        <div class="header-fon"></div> 
+        <div class="container">
+            <div class="header-container">
+                
+                <div class="header-logo">
+                    <a href="{% url 'main' %}">
+                       Womazing 
+                    </a>
+                    
+                </div>
+                
+                <div>
+                    
+                    <ul class="header-list">
+                        <a href="{% url 'main' %}" class="header-a">
+                            <li class="header-item">Главная</li>
+                        </a>
+                        <a href="{% url 'shop' %}" class="header-a">
+                            <li class="header-item">Магазин</li>
+                        </a>
+                        <a href="{% url 'about_brand' %}" class="header-a">
+                            <li class="header-item">О бренде</li>
+                        </a>
+                        <a href="{% url 'contact' %}" class="header-a">
+                            <li class="header-item">Контакты</li>
+                        </a>
+                       
+                    </ul>
+                </div>
+                <div class="header-contact">
+                    <p class="headerLogoContact"><a href="{% url 'contact' %}">+7 (*34) 833-**-12</a></p>
+                   
+                    <a id="basket" href="{% url 'basket' %}" class="headerBasket"><span class="countProduct">{{basket_count}}</span></a>
+                   <p>
+                   </p>
+                    <div class="authen">
+                        {% if user.is_authenticated %}
+                            <span>{{ user.get_username}}</span><br>
+                            <span><a href="{% url 'logout' %}?next={{request.path}}">Выйти</a></span>
+                        {%else%}
+                            <span><a href="{% url 'login' %}">Войти</a></span>
+                        {%endif%}
+                    </div>
+                    <div class="containerBurger">
+                         <div class="btnBurder">
+                            <span class="burderLine"></span>
+                            <span class="burderLine"></span>
+                            <span class="burderLine"></span>
+                        </div>
+                    <div class="burgerContent">
+
+                    </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+ </header>
+ <main class="main">
+    <div class="container">
+        {% block content %}
+
+          {%endblock%}
+    </div>
+        
+ </main>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-container-left">
+                    <div class="footer-info">
+
+                        <h5>Womazing</h5>
+                        <p>© Все права защищены Политика конфиденциальности Публичная оферта</p>
+                    </div>
+                    <ul class="footerList">
+                        <li class="footer-item"><span><a href="{% url 'main'%}">Главная</a> </span></li>
+                        <li class="footer-item listInset"> <span><a href="">Магазин</a> </span>
+                            <ul class="footerInsetList">
+                                <li class="footerInsetItem">   <a href="{% url 'shop'%}">Пальто</a> </li>
+                                <li class="footerInsetItem">   <a href="{% url 'shop'%}">Свитшоты</a> </li>
+                                <li class="footerInsetItem">   <a href="{% url 'shop'%}">Кардиганы</a> </li>
+                                <li class="footerInsetItem">   <a href="{% url 'shop'%}">Толстовки</a> </li>
+                            </ul> 
+                        </li>
+                        <li class="footer-item"> <span><a href="{% url 'about_brand'%}">О бренде</a> </span> </li>
+                        <li class="footer-item"> <span><a href="{% url 'contact'%}">Контакты</a> </span> </li>
+                    </ul>
+                </div>
+                <div class="footer-container-right">
+                    <div>
+                       <h5 class="footerContact">
+                        +7 (499) 8*3-24-52
+                        hello@mail.com
+                        </h5> 
+                    </div>
+                    
+                    <ul class="footerIconList">
+                        <li class="footerIconItem"> <img src="{% static 'main/image/icon/instagram.svg'  %}" alt=""></li>
+                        <li class="footerIconItem"> <img src="{% static 'main/image/icon/facebook.svg' %}" alt=""></li>
+                        <li class="footerIconItem"> <img src="{% static 'main/image/icon/twitter.svg' %}" alt=""></li>
+                    </ul>
+                    <p class="visa-mastercard"><img src="{% static 'main/image/icon/visa-mastercard.svg' %}" alt=""></p>
+                </div>
+            </div>
+        </div>
+</footer>
+    <script src="{% static 'main/js/js.js' %}"></script>
+</body>
+</html>

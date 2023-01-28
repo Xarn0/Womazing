@@ -1,0 +1,101 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title%} Корзина {%endblock%}       
+{% block content %}
+            <div class="basketContainerH5">
+                <h5 class="mainH5">Корзина</h5>
+                <div class="MainContainerNav">
+                    <p>Главная</p>
+                    <p class="teell">&#8212</p>
+                    <p>Корзина</p>
+                </div>
+            </div>
+
+            <table class="tableBasket">
+               <thead>
+                    <tr class="rowTableBasketHeader">
+                        <th class="colTableProduct">Товар</th>
+                        <th class="colTablePrice">Цена</th> 
+                        <th class="colTableCount">Количество</th>  
+                        <th class="colTableAll">Всего</th>  
+                    </tr>
+               </thead>
+               <hr class="hrTable">
+               <tbody class="basketBody">
+                {% if basketUser%}
+                    {%for item in basketUser%}
+                    
+                        <tr class="rowTableBasketContent">
+                            <form method="post">
+                                    {% csrf_token %}
+                            <td class="basketContentitem-img">
+                                
+                                <input type="hidden" name="deleteEl" value="{{item.id}}">
+                                <input type="submit" class="closeInput" value="&#10006"><span></span><div class="basketContentitem-img-container">
+                                
+                                <img src="{{item.image.url}}" alt=""> </div>
+                            <p>{{item.name}}</p>
+                            </td></form>
+                            <td class="basketContentitem-price">{{item.price}}</td>
+                            <td class="basketContentitem-count">
+                                <form method="POST" id="up" name="up" class="formaCount" >
+                                    {%csrf_token%}
+                                    <input type="number" name="countElement" class="basketContentitem-countContainer" value="{{item.count}}">
+                                    <input type="hidden" name="countElementId" value="{{item.id}}" >
+                                    
+                                </form>
+                            </td>
+                            <td class="basketContentitem-price">{{item.sum}}</td>
+                        </tr>
+                    
+                    {%endfor%}
+                {%else%}
+                        <tr><td class='emptyBasket'colspan="4">У вас пустая корзина</td></tr>
+
+                {%endif%}
+               </tbody>
+               
+                
+                
+                
+            </table>
+            <div class="rowBtnsBasket">
+                <div class="containerBasketCoupon">
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="text" class="ob_input" name="coupon" placeholder="Введите купон">
+                        
+                        <button class="btnOpen">Применить купон</button>
+                    </form>
+                    {% if coupon %}
+                        <p class="massengAccess">купон используется</p>
+                    {%endif%}
+                </div>
+                <div class="containerBasketUpdata">
+                    <form> {%csrf_token%}
+                        <input type="submit"  class="btnOpen" value="Обновить корзину">
+                    </form>
+                    
+                </div>
+            </div>
+
+             <div class="rowBesign">
+                <div class="containerBasketSum">
+                    <div class="rowBesignBuy">
+                            <p>Подытог: <span class="rowBesignBuySumMinValue">{{summ}} {% if oldsum %} <sup> <span class="minBasket">-</span>{{oldsum}}</sup>{%endif%}</span></p><br>
+                            <div class="rowBesignBuySum">
+                            <span>Итого:</span>
+                            <span class="rowBesignBuySumValue">{{summ}}
+                               {% if oldsum %} <sup> <span class="minBasket">-</span>{{oldsum}}</sup>{%endif%}
+                            </span>
+                    </div>
+
+                    </div>
+                </div>
+                <div class="containerBtnBasket">
+                     <a href="{% url 'checkout' %}">
+                        <button class="btn-project">Оформить заказ</button></a>
+                </div>
+                
+             </div>
+{% endblock%}     

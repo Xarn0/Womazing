@@ -1,0 +1,79 @@
+{% extends 'main/layout.html' %}
+{% load static %} 
+{% block title %} Оформление заказа{% endblock %}
+
+{% block content %}
+   
+        <div class="chekoutContainerH5">
+            <h5 class="mainH5">Оформление заказа</h5>
+            <div class="MainContainerNav">
+                <p>Главная</p>
+                <p class="teell">&#8212</p>
+                <p>Оформление заказа</p>
+            </div>
+        </div>
+        <form action="">
+            <div class="checkoutOneStrng">
+                <div class="checkLeftBlock">
+                        <h6 class="ob_h6">Данные покупателя</h6>
+                        <input type="text" class="ob_input" placeholder="Имя">
+                        <input type="text" class="ob_input" placeholder="E-mail">
+                        <input type="text" class="ob_input" placeholder="Телефон">
+                </div> 
+                
+                    <div class="checkoutRightBlock">
+                        <h6 class="ob_h6">Ваш заказ</h6>
+                        <ul class="checkoutRightBlockList">
+                            <li class="checkoutRightBlockItem">
+                                <div class="checkoutRightBlockItemContainer checkoutRightBlockItemContainer-header">
+                                    <p>Товар</p>
+                                    <p class="sumCheck">Всего</p>
+                                </div>
+                            </li>
+                            <div>
+                            <li class="checkoutRightBlockItem">
+                            {% for i in dataCheckout%}
+                                <div class="checkoutRightBlockItemContainer">
+
+                                    <p>{{i.name}}</p>
+                                    <p class="sumCheck">{{i.allSum}}</p>
+                                </div> 
+                                {%endfor%}
+                            </li>
+                            <li class="checkoutRightBlockItem">
+                                <div class="checkoutRightBlockItemContainer">
+                                    <p>Подытог</p>
+                                    <p class="sumCheck">{{all}}</p>
+                                </div>
+                            </li>
+                            </div>
+                            <li class="checkoutRightBlockItem">
+                                <div class="checkoutRightBlockItemContainer checkoutRightBlockItemContainer-itogo">
+                                    <p>Итого</p>
+                                    <p class="sumCheck">{{all}}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+               
+            </div>
+            <div class="checkoutTwoString">
+                <div class="checkoutTwoStringLeftBlock">
+                    <h6 class="ob_h6">Адрес получателя</h6>
+                    <input type="text" class="ob_input" placeholder="Страна">
+                    <input type="text" class="ob_input" placeholder="Город">
+                    <input type="text" class="ob_input" placeholder="Улица">
+                    <input type="text" class="ob_input" placeholder="Дом">
+                    <input type="text" class="ob_input" placeholder="Квартира">
+                    <h6 class="ob_h6 comments">Комментарии</h6>
+                    <input type="text" class="ob_input comments-input" placeholder="Страна">
+                </div>
+                <div class="checkoutTwoStringRightBlock">
+                    <h6 class="ob_h6">Способы оплаты</h6>
+                    
+                    <label id="la" class="CheckoutCheckboxLabel"><input type="checkbox" checked class="checkbox_input" name="" id="" > <div class="checkbox_div"></div> Оплата наличными</label>
+                    <button class="btn-project">Разместить заказ</button>
+                </div>
+            </div>
+        </form>
+    {% endblock %}

@@ -1,0 +1,274 @@
+{% extends 'main/layout.html' %}
+{% load static %} 
+{% block title %} Магазин {% endblock %}
+
+{% block content %}
+<div class="shop">
+    <ul class="shop_list">
+        <li class="shop-item " data-content="1">Все</li>
+        <li class="shop-item" data-content="2">Пальто</li>
+        <li class="shop-item" data-content="3">Свитшоты</li>
+        <li class="shop-item" data-content="4">Кардиганы</li>
+        <li class="shop-item" data-content="5">Футболки</li>
+    </ul>
+  
+    {% if productAll%}
+        <div class="shop_content" data-content="1">
+            <!-- <p class="tovar_all">Показано: {% widthratio productAll.number 1 count_paginator_elementov %} из {{countAll}} товаров</p> -->
+            
+            <div>
+                    {% for item in productAll %}
+                        <a class="item_product" href="{% url 'product' id=item.id %}">
+                            <div class="shop_content_item">
+                                <img src="{{item.image.url}}" alt="">
+                                <p>{{item.name}}</p>
+                                
+                               
+                                
+                                <span>{{item.price}} р</span>
+                                
+                           
+                               
+                                
+                        
+                            </div>
+                        </a> 
+                        {%endfor%}
+            </div>
+          
+            <div class="paginat_all">
+                
+                <a class="paginator_all_prev" href="{%if productAll.has_previous%}?page_all={{productAll.previous_page_number}} {%endif%}"></a>
+                
+               
+                    
+                    <div style="position:relative">
+                    {%for i in productAll.paginator.page_range %}
+                        {%if i == productAll.number %}
+                        <span class="paginat_item active">{{i}}</span>
+                        {%else%}
+                        <a style="text-decoration:none;color:black" href="?page_all={{i}}">
+                            <span class="paginat_item">{{i}}</span>
+                        </a>
+                        {%endif%}
+                            
+                    {%endfor%}
+                </div>
+                
+              
+                <a class="paginator_all_next" href="{% if productAll.has_next%}?page_all={{productAll.next_page_number}} {%endif%} "></a>
+
+               
+            </div>
+            
+           
+           
+        </div>
+    {%endif%}
+
+
+
+
+    {%if coat%}
+        <div class="shop_content " data-content="2">
+            <!-- <p class="tovar_all">Показано: {% widthratio coat.number 1 count_coat_list %} из {{count_coat}} товаров</p> -->
+            
+            <div>   
+                    {% for item in coat%}
+                    <a class="item_product" href="{% url 'product' id=item.id %}">
+                        <div class="shop_content_item">
+                            <img src="{{item.image.url}}" alt="">
+                            <p>{{item.name}}</p>
+                            <span>{{item.price}} р</span>
+                        </div>
+                    </a>
+                    {%endfor%}
+            </div>
+            <div class="paginat_all">
+                
+                
+                <!-- <div class="paginator_all_prev-container"> -->
+                    <a class="paginator_all_prev" href="{%if coat.has_previous%}?page_coat={{coat.previous_page_number}}{%endif%}"></a>
+                <!-- </div> -->
+                
+                
+                
+                    
+                    <div style="position:relative">
+                    {%for i in coat.paginator.page_range %}
+                        {%if i == coat.number %}
+                        <span class="paginat_item active">{{i}}</span>
+                        {%else%}
+                        <a style="text-decoration:none;color:black" href="?page_coat={{i}}">
+                            <span class="paginat_item">{{i}}</span>
+                        </a>
+                        {%endif%}
+                            
+                    {%endfor%}
+                </div>
+                
+                
+                    <a class="paginator_all_next"
+                    
+                         href="{%if coat.has_next%}?page_coat={{coat.next_page_number}} {%endif%} ">
+                   
+                    </a> 
+              
+               
+            </div>
+
+        </div>
+    {%endif%}
+
+    {%if sweatshirts%}
+   
+        <div class="shop_content" data-content="3">
+             <!-- <p class="tovar_all">Показано: {% widthratio sweatshirts.number 1 count_sweatshirts_list %} из {{count_sweatshirts}} товаров</p> -->
+            <div>
+                    {%for item in sweatshirts%}
+                    <a class="item_product" href="{% url 'product' id=item.id %}">
+                            <div class="shop_content_item">
+                                <img src="{{item.image.url}}" alt="">
+                                <p>{{item.name}}</p>
+                                <span>{{item.price}} р</span>
+                            </div>
+                        </a>
+                    {%endfor%}
+          </div> 
+          <div class="paginat_all">
+                
+                
+            <!-- <div class="paginator_all_prev-container"> -->
+                <a class="paginator_all_prev" href="{%if sweatshirts.has_previous%}?page_sweatshirts={{sweatshirts.previous_page_number}}{%endif%}"></a>
+            <!-- </div> -->
+            
+            
+            
+                
+                <div style="position:relative">
+                {%for i in sweatshirts.paginator.page_range %}
+                    {%if i == sweatshirts.number %}
+                    <span class="paginat_item active">{{i}}</span>
+                    {%else%}
+                    <a style="text-decoration:none;color:black" href="?page_sweatshirts={{i}}">
+                        <span class="paginat_item">{{i}}</span>
+                    </a>
+                    {%endif%}
+                        
+                {%endfor%}
+            </div>
+            
+            
+                <a class="paginator_all_next"
+                
+                     href="{%if sweatshirts.has_next%}?page_sweatshirts={{sweatshirts.next_page_number}} {%endif%} ">
+               
+                </a> 
+          
+           
+        </div>
+        </div>
+    {%endif%}
+
+    {%if cardigan%}
+        <div class="shop_content" data-content="4">
+            <!-- <p class="tovar_all">Показано: {% widthratio coat.number 1 count_cardigan_list %} из {{count_cardigan}} товаров</p> -->
+            <div>
+
+                {%for item in cardigan%}
+                <a class="item_product" href="{% url 'product' id=item.id %}">
+                <div class="shop_content_item">
+                    <img src="{{item.image.url}}" alt="">
+                    <p>{{item.name}}</p>
+                    <span>{{item.price}} р</span>
+                </div> </a>
+                {%endfor%}
+            </div>
+            <div class="paginat_all">
+                
+                
+                <!-- <div class="paginator_all_prev-container"> -->
+                    <a class="paginator_all_prev" href="{%if cardigan.has_previous%}?page_cardigans={{cardigan.previous_page_number}}{%endif%}"></a>
+                <!-- </div> -->
+                
+                
+                
+                    
+                    <div style="position:relative">
+                    {%for i in cardigan.paginator.page_range %}
+                        {%if i == cardigan.number %}
+                        <span class="paginat_item active">{{i}}</span>
+                        {%else%}
+                        <a style="text-decoration:none;color:black" href="?page_cardigans={{i}}">
+                            <span class="paginat_item">{{i}}</span>
+                        </a>
+                        
+                        {%endif%}
+                            
+                    {%endfor%}
+                </div>
+                
+                
+                    <a class="paginator_all_next"
+                    
+                         href="{%if cardigan.has_next%}?page_cardigans={{cardigan.next_page_number}} {%endif%} ">
+                   
+                    </a> 
+              
+               
+            </div>
+        </div>
+    {%endif%}
+
+    {%if hoodies%}
+    <div class="shop_content" data-content="5">
+        <!-- <p class="tovar_all">Показано: {% widthratio hoodies.number 1 count_hoodies_list %} из {{count_hoodies}} товаров</p> -->
+        <div>
+
+            {%for item in hoodies%}
+            <a class="item_product" href="{% url 'product' id=item.id %}">
+            <div class="shop_content_item">
+                <img src="{{item.image.url}}" alt="">
+                <p>{{item.name}}</p>
+                
+                <span>{{item.price}} р</span>
+            </div> </a>
+            {%endfor%}
+        </div>
+        <div class="paginat_all">
+                
+                
+            <!-- <div class="paginator_all_prev-container"> -->
+                <a class="paginator_all_prev" href="{%if hoodies.has_previous%}?page_hoodies={{hoodies.previous_page_number}}{%endif%}"></a>
+            <!-- </div> -->
+            
+            
+            
+                
+                <div style="position:relative">
+                {%for i in hoodies.paginator.page_range %}
+                    {%if i == hoodies.number %}
+                    <span class="paginat_item active">{{i}}</span>
+                    {%else%}
+                    <a style="text-decoration:none;color:black" href="?page_hoodies={{i}}">
+                        <span class="paginat_item">{{i}}</span>
+                    </a>
+                    
+                    {%endif%}
+                        
+                {%endfor%}
+            </div>
+            
+            
+                <a class="paginator_all_next"
+                
+                     href="{%if hoodies.has_next%}?page_hoodies={{hoodies.next_page_number}} {%endif%} ">
+               
+                </a> 
+          
+           
+        </div>
+        </div>
+    {%endif%}
+</div>
+{%endblock%}

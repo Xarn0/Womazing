@@ -1,0 +1,659 @@
+
+.contactContainerH5 {
+   
+}
+.mainH5 {
+    margin-bottom: 26px;
+    font-weight: 500;
+    font-size: 55px;
+    font-family: Raleway-Medium;
+    margin-top: 59px ;
+}
+.MainContainerNav {
+    display: flex;
+    font-family: Raleway-Medium;
+    margin-bottom: 142px;
+}
+.MainContainerNav p {
+        font-weight: 500;
+        font-size: 17px;
+        margin-right: 10px;
+}
+.teell {
+}
+
+.map{
+    width: 100%;
+   
+    height: 478px;
+    position: relative;
+}
+.map>iframe{
+    width: 100%;
+}
+.cintactList {
+    display: flex;
+    list-style-type: none;
+    margin-top: 130px;
+    margin-bottom: 130px;
+    flex-wrap: wrap;
+}
+.ContactItem {
+    margin-right: 200px;
+    font-weight: 500;
+    font-family: Raleway-Medium;
+}
+.contactTelefon,.contactEmail,.contactAdress{
+    font-style: 17px;
+   margin-bottom: 15px;
+   
+}
+.contactRapport {
+    width: 400px;
+}
+.ob_h6 {
+     
+    font-weight: 500;
+    font-size: 25px;
+}
+.ob_form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 62px;
+    margin-bottom: 50px;
+}
+
+.ob_form textarea{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #202020;
+    resize: none;
+}
+.ob_input {
+    border: none;
+    border-bottom: 1px solid #202020;
+    margin-bottom: 35px;
+    padding-bottom: 16px;
+    outline: none;
+}
+.btnContactForms{
+    margin-top: 20px;
+    width: 170px;
+    padding-left: 42px;
+
+}
+.oblo{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+.massengAccess{
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #F1EADC;
+    text-align: center;
+    font-family: Raleway-Medium;  
+    font-size: 17px;
+}
+
+.btnBrand{
+    margin: 0 auto;
+    margin-bottom: 130px;
+    display: block;
+}
+.oneRowBrand {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.twobrand{
+    margin-top: 100px;
+     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    margin-bottom: 100px;
+}
+.blockItemOne {
+}
+.blockItemTwo {
+    font-family: Raleway-Medium;  
+    width:542px ;
+    line-height: 140%;
+}
+.blockItemTwo h5{
+    font-weight: 500;
+    font-size: 25px;
+    margin-top: 160px;
+    margin-bottom: 46px;
+}
+.blockItemTwo >p{
+    margin-bottom: 25px;
+}
+
+.tableBasket {
+    width: 100%;
+    font-family: Raleway-Medium;  
+}
+
+.rowTableBasketHeader {
+    border: none;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 40px;
+    /* padding-bottom: 30px; */
+}
+.hrTable{
+    position: relative;
+    top: 53px;
+    background-color: #ccc;
+    border: none;
+    width: 100%;
+    height: 2px;
+}
+.rowTableBasketHeader th{
+    padding-bottom: 134px;
+}
+.colTableProduct {
+}
+.colTablePrice {
+}
+.colTableCount {
+  
+}
+.colTableAll {
+}
+.rowTableBasketContent {
+    text-align: left;
+}
+.basketContentitem-img {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+}
+.basketContentitem-img p{
+    margin-left: 36px;
+    vertical-align: center;
+}
+.basketContentitem-img>span{
+    margin-right: 36px;
+    cursor: pointer;
+}
+.basketContentitem-price {
+}
+.basketContentitem-countContainer {
+    padding:10px;
+    width: 40px;
+    border: 1px solid #AFAFAF;
+    text-align: center;
+    
+}
+input::-webkit-inner-spin-button{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.basketContentitem-img-container {
+    max-width: 136px;
+  
+}
+.basketContentitem-img-container img{
+    max-width: 100%;
+}
+.rowBtnsBasket {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.containerBasketCoupon > input{
+    padding-bottom: 19px;
+    width:255px;
+    margin-right: 14px;
+}
+.ob_input {
+}
+.btnOpen {
+}
+.containerBasketUpdata {
+}
+.rowBesign {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 90px;
+    margin-bottom: 90px;
+   
+}
+.rowBesign>div{
+    margin-top: 13px;
+}
+.rowBesignBuySum span { 
+   font-size: 25px;
+   font-weight: 500;
+   font-family: Raleway-Medium;  
+}
+.rowBesignBuy>p{
+    font-family: Raleway-Medium;  
+    font-weight: 500;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+.rowBesignBuy>p>span{
+    margin-left: 20px;
+}
+.containerBasketSum{
+    display: flex; 
+    max-width: 538px;
+}
+.rowBesignBuySum {
+    padding: 16px 51px 17px 31px; 
+    background: #F1EADC;
+    color:#6A6661 ;
+    font-family: Raleway-Medium;  
+    font-weight: 500;
+    margin-right: 30px;
+
+}
+.rowBesignBuySumValue {
+    margin-left: 70px;
+}
+.containerBtnBasket{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end
+}
+
+
+
+
+.checkoutOneStrng {  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.checkLeftBlock {
+   
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 350px;
+  
+}
+.checkLeftBlock .ob_h6 {
+    margin-bottom: 60px;
+    
+}
+
+.checkoutRightBlock {
+   width: 300px;
+}
+.checkoutRightBlock .ob_h6{
+    margin-left: 18px;
+}
+.checkoutRightBlockItemContainer {
+    display: flex;
+    font-family: Raleway-Medium; 
+   justify-content: space-between;
+   padding: 0px 18px;
+   margin: 14px;
+}
+.checkoutRightBlockItemContainer-header{
+    font-size: 20px;
+    margin-top: 50px;
+    
+}
+.checkoutRightBlockItem {
+    list-style-type: none;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+.checkoutRightBlockItemContainer-itogo{
+    background: #F1EADC;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.sumCheck{
+    width: 90px;
+}
+
+.checkoutTwoString {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.checkoutTwoStringLeftBlock {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+.checkoutTwoStringLeftBlock .ob_h6{
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+
+.comments {
+    margin-top: 50px;
+}
+.comments-input {
+    padding-bottom: 100px;
+}
+
+.checkoutTwoStringRightBlock {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    position: relative;
+    max-height: 221px;
+    justify-content: space-between;
+    max-width: 246px;
+    right: 33px;
+    margin-top: 146px;
+    font-family: Raleway-Medium; 
+}
+.CheckoutCheckboxLabel {
+    --width-Checkbox:22px;
+    --widthBeforCheckBox:10px;
+    --backgeoundBefor:#202020;
+    cursor:pointer;
+    display: flex;
+}
+.checkbox_input {
+    display: none;
+}
+.checkbox_div::before{
+    content: '';
+    background-color: #fff; 
+    transition: background-color .5s ease-in;
+    
+    
+}
+.checkbox_input:checked + .checkbox_div::before{
+    content: '';
+    position: absolute;
+    width: var(--widthBeforCheckBox);
+    height: var(--widthBeforCheckBox);
+    background-color: var(--backgeoundBefor);
+}
+.checkbox_div {
+    width: var(--width-Checkbox);
+    height: var(--width-Checkbox);
+    border: 1px solid #202020;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+   
+}
+
+.itemBlock {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Raleway-Medium; 
+    font-weight: 500;
+
+}
+.itemImg {
+    width: 350px;
+}
+.itemImg  img {
+    max-width: 100%;
+}
+.itemData {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-bottom: 90px;
+    padding-top: 37px;
+    padding-left: 39px;
+
+}
+.itemPrice>p {
+    margin-right: 15px;
+    font-size: 40px;
+    color: #998E78;
+}
+.itemPrice>p+span{
+    font-size: 30px;
+    color: #9C9C9C;
+    text-decoration: line-through;
+}
+.itemPrice {
+    display: flex;
+}
+
+.itemSize {
+    margin-top: 40px;
+}
+.itemSize >p, .itemColor >p{
+    font-size: 20px;
+    margin-bottom: 34px;
+}
+.itemSize>div{
+    width: 263px;
+    display: flex;
+    /* justify-content: space-between; */
+}
+.itemSize-input {
+    display: none;
+}
+.itemSize-label{
+    margin-right: 14px;
+ 
+}
+.itemSize-input+span{
+    display: block;
+    /* background-color: #999; */
+}
+.itemSizeDiv{
+    border: 1px solid #202020;
+    user-select: none;
+    text-align: center;
+    padding-top: 7px;
+    padding-right: 11px;
+    padding-bottom: 8px;
+    padding-left: 11px;
+    cursor: pointer;
+    transition:  background-color .8s , color .8s ease-in-out;
+
+}
+.itemSize-input:checked ~ .itemSizeDiv{
+    background-color: #202020;
+    color: #fff;
+    
+}
+.itemColor >div {
+    display: flex;
+    width:  206px;
+    /* justify-content: space-between; */
+}
+.itemColor{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.itemColor-input {
+    display: none;
+    
+
+}
+.itemColorDiv{
+    border-radius: 50%;
+    width: 41px;
+    height: 41px;
+    margin-right: 15px;
+    border: none;
+    cursor: pointer;
+   transition:border .5s ease-in-out;
+}
+.itemColor-input:checked + .itemColorDiv{
+    border: 1px solid #202020; 
+}
+.itemBtn {
+    display: flex;
+}
+.itemBtn>input::-webkit-inner-spin-button{
+    appearance: none;
+}
+.itemCount {
+    text-align: center;
+    height: 100%;
+    width: 60px;
+    border: 1px solid #000;
+    padding-left: 3px;
+    outline: none;
+    font-size: 20px;
+    font-family:Raleway-Regular ;
+    margin-right: 10px;
+}
+.btn-project {
+}
+.itemSimilarContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 44px;
+}
+.itemSimilar-item{
+    max-width: 250px;
+    margin: 14px;
+    font-family: Raleway-Medium; 
+    text-align: center;
+}
+.itemSimilar-item img{
+    max-width: 100%;
+    max-height: 311px;
+}
+.itemSimilar-item > p{
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-top: 24px;
+    
+}
+.itemSimilar-item > span{
+    font-weight: 500;
+    font-size: 15px;
+    color: #B2AA9A;
+    margin-bottom: 10px;
+}
+.minBasket{
+    color: rgb(191, 9, 9);
+    text-decoration: none;
+    margin-right: 2px;
+    display: inline-table;
+}
+.closeInput{
+    background: inherit;
+    border: none;
+    outline: none;
+    font-size: 17px;;
+}
+.loginblock{
+    margin: 40px auto;
+    width: 310px;
+}
+.blockConfirmResetPassword{
+    margin: 40px auto;
+    width: 370px;
+}
+.loginblock a{
+    text-decoration: none;
+    color:#000;
+    text-align: center;
+    display: block;
+    font-family: Raleway-Medium;
+    font-size: 18px;
+    margin: 12px 0;
+}
+.loginblock input[type="submit"] ,.blockConfirmResetPassword input[type="submit"] ,.blockResetEmail input[type="submit"], .forms-reg input[type='submit']{
+    width: 100%;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    background-color: #689A9E;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+    font-size: 17px;
+    font-family: Raleway-Medium;
+}
+.blockUsername,.blockResetEmail{
+    font-family: Raleway-Medium;
+    margin: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.authen{
+    font-family: Raleway-Medium;
+    font-size: 13px; 
+    color: #689A9E;
+}
+.blockUsername>p , .blockConfirmResetPassword>p{
+    text-align: center;
+    font-size: 24px;
+    margin-right: 10px;
+    width: 100%;
+}
+.blockUsername input, .blockResetEmail input,.blockConfirmResetPassword input{
+    border: none;
+    border-bottom: 1px solid #202020;
+    margin-bottom: 15px;
+    padding-bottom: 16px;
+    outline: none;
+    width: 100%;
+}
+.blockError{
+    margin: 0 auto;
+    width: 400px;
+    font-size: 17px;
+    font-family: Raleway-Medium;
+    color: rgba(207, 105, 105, 0.896);
+    
+}
+.blockResetEmail input[type="submit"], .blockConfirmResetPassword input[type="submit"]{
+    padding: 0;
+    
+}
+.blockResetEmail input{
+    width: 290px;
+}
+.blockResetEmail{
+    justify-content: center;
+}
+.blockConfirmResetPassword{
+    font-size: 17px;
+    font-family: Raleway-Medium;
+}
+.blockConfirmResetPassword h3{
+    margin: 20px 0;
+    
+}
+.a{
+    text-decoration: none;
+   
+    font-size: 30px;
+    color: #ccc;
+}
+.p{
+    font-size: 24px; 
+    font-family: Raleway-Medium;
+    color: #000;
+}
+.forms-reg{
+    max-width: 290px;
+    min-width: 250px;
+    margin: 0 auto;
+}
+.forms_reg_input{
+    width: 100%;
+}

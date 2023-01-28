@@ -1,0 +1,172 @@
+{% extends 'main/layout.html' %}
+{% load static %} 
+{% block title %} Главная {% endblock %}
+
+{% block content %}
+
+
+<div class="header-content">
+    <div class="header-slader">
+        <div class="header-slader-line">
+            <div class="header-slader-item" data-active data-hasdot = "0">
+                <div class="header-slader-item-container">
+                    
+            
+                        <div class="header-slader-item-text">
+                            <h4>Новые поступления
+                                в этом сезоне</h4>
+                            <div class="header-slader-item-text-container">
+                                <p>Утонченные сочетания и бархатные оттенки - вот то, что вы искали в этом сезоне. Время исследовать.</p>
+                                <button class="btn-project"><span><a href="{% url 'shop' %}">Открыть магазин</a></span></button>
+                            </div>
+                        
+                        </div>
+                        <div class="header-slader-item-img">
+                            <img src="{% static 'main/image/header-slaed.png' %}" alt="">
+                        </div>
+                </div>
+            </div>
+            <div class="header-slader-item" data-hasdot = "1" >
+                <div class="header-slader-item-container">
+                    
+            
+                        <div class="header-slader-item-text">
+                            <h4>Серое однобортное пальто с английским воротником</h4>
+                            <div class="header-slader-item-text-container">
+                                <p>Утонченные сочетания и бархатные оттенки - вот то, что вы искали в этом сезоне. Время исследовать.</p>
+                                <button class="btn-project"><span><a href="{% url 'shop' %}">Открыть магазин</a> </span> </button>
+                            </div>
+                        
+                        </div>
+                        <div class="header-slader-item-img">
+                            <img src="{% static 'main/image/coatCCC.jpg' %}" alt="">
+                        </div>
+                </div>
+            </div>
+            <div class="header-slader-item" data-hasdot = "2" >
+                <div class="header-slader-item-container">
+                    
+            
+                        <div class="header-slader-item-text">
+                            <h4>Серое однобортное пальто с английским воротником</h4>
+                            <div class="header-slader-item-text-container">
+                                <p>Утонченные сочетания и бархатные оттенки - вот то, что вы искали в этом сезоне. Время исследовать.</p>
+                                <button class="btn-project"><span><a href="{% url 'shop' %}">Открыть магазин</a></span></button>
+                            </div>
+                        
+                        </div>
+                        <div class="header-slader-item-img">
+                            <img src="{% static 'main/image/3388-2_1.jpg' %}" alt="">
+                        </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="dotHeaderSladera">
+            <span class="dotHeaderItem active" data-dot="1"></span>
+            <span class="dotHeaderItem" data-dot="2"></span>
+            <span class="dotHeaderItem" data-dot="3"></span>
+        </div>
+        <!-- <button class="" onclick="btnNextSladerHeader(1)">&#10094</button>
+        <button onclick="btnPrevSladerHeader(-1)">&#10095</button> -->
+    </div>
+</div>
+<div class="NewCollection">
+    <h4 class="textH4project">Новая коллекция</h4>
+     <div class="sladerCollectionConteiner">
+        <div class="sladerCollectionConteiner-line">
+            <div class="sladerCollectionConteiner-list">
+                {% for element in product%}
+                    
+                    <div class="sladerCollectionConteiner-item">
+                        <div  style ="position: relative;">
+                         <button></button>
+                        <img src="{{element.image.url}}" alt="">
+                      
+                        </div>
+                        <p>{{element.name}}</p>
+                        <p ><span class="price oldPrice"></span>{{element.price}}<span class="price"><sub>{{element.oldprice}}</sub></span></p>
+                    </div>
+                   
+                {%endfor%}
+                
+            </div> 
+            <!-- <button class="btnSladerNewPrevCollection">
+                &#10094
+            </button>
+            <button class="btnSladerNewNextCollection">
+                &#10095
+            </button> -->
+        </div>
+       
+     </div>
+    <div class="conteiner-btnOpen"><a href="{% url 'shop' %}"><button class="btnOpen">Открыть магазин</button></a></div> 
+</div>
+<div class="skills">
+    <h4 class="textH4project">Что для нас важно</h4>
+    <div class="skillsContainer">
+        <div class="skillsContainer-item">
+            <p class="skillsContainer-item-icon">
+                <img src="{% static 'main/image/icon/hexagon.svg' %}" alt="">
+            </p>
+            <h5 class="skillsContainer-item-h5">Качество</h5>
+            <p class="skillsContainer-item-text">Наши профессионалы работают на лучшем оборудовании для пошива одежды беспрецедентного качества</p>
+        </div>
+        <div class="skillsContainer-item">
+            <p class="skillsContainer-item-icon">
+                <img src="{% static 'main/image/icon/hexagonBig.svg' %}" alt="">
+            </p>
+            <h5 class="skillsContainer-item-h5">Скорость</h5>
+            <p class="skillsContainer-item-text">Благодаря отлаженной системе в Womazing мы можем отшивать до 20-ти единиц продукции в наших собственных цехах</p>
+        </div>
+        <div class="skillsContainer-item">
+            <p class="skillsContainer-item-icon">
+                <img src=" {% static 'main/image/icon/hand.svg' %}" alt="">
+            </p>
+            <h5 class="skillsContainer-item-h5">Ответственность</h5>
+            <p class="skillsContainer-item-text">Мы заботимся о людях и планете. Безотходное производство и комфортные условия труда - все это Womazing</p>
+        </div>
+    </div>
+</div>
+<div class="comands-container">
+    <h4 class="textH4project">Команда мечты Womazing</h4>
+    <div class="comand-block">
+        <div class="sladerComand">
+            <div class="sladerComand-list">
+                <div class="sladerComand-item" data-hasdot="1" data-active="true">
+                     <img src="{% static 'main/image/comands.png' %}" alt="">
+                </div>
+                <div class="sladerComand-item"  data-hasdot="2">
+                    <img src="{% static 'main/image/comand1.jpg' %}" alt="">
+                </div>
+                <div class="sladerComand-item"  data-hasdot="3">
+                    <img src="{% static 'main/image/comand4.jpeg ' %} " alt="">
+                </div>
+                <button class="btnSladerComandsNext"></button>
+                <button class="btnSladerComandsPrev"></button>
+                <div class="dotsSladerComands">
+                    <span class="dotComands active" data-dot="1"></span>
+                    <span class="dotComands" data-dot="2"></span>
+                    <span class="dotComands" data-dot="3"></span>
+            </div>
+            </div>
+            
+            
+        </div>
+            <div class="comands-Lefttext">
+                <h5>Для каждой</h5>
+                <p>Каждая девушка уникальна. Однако, мы схожи в миллионе мелочей.</p>
+                <p>Womazing ищет эти мелочи и создает прекрасные вещи, которые выгодно подчеркивают достоинства каждой девушки.</p>
+                <a href="{% url 'about_brand' %}" class="comands-Lefttext-a">Подробнее о бренде</a>
+            </div>
+        </div>
+    
+      
+    </div>
+</div>
+
+</div>
+<div class="cl">
+
+</div>
+{% endblock %}
