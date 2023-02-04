@@ -6,7 +6,10 @@
 <div class="forms-reg">
     <form method="POST" id="reg_form">
     {%csrf_token%}
-    {{form.as_p}}
+    {%for i in form%}
+        {{i}}
+        <div class="error-reg">{{i.errors}}</div>
+    {%endfor%}
    
     <input type="submit" id="reg_form_sub" value="Зарегистрироваться">
     </form>
